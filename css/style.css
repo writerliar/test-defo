@@ -8,67 +8,108 @@ body {
 
 .wrapper {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     margin: 0 auto;
     padding: 20px 20px;
     min-height: 100vh;
     height: auto;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
-.column {
-    align-self: stretch;
+.special {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
 }
 
 .page-header {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 10%;
     min-width: 200px;
-    align-self: flex-start;
     background-color: #fee6cc;
     border: 2px solid #eac871;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
-main {
+.main {
     margin-right: 10px;
     background-color: #fff2cc;
     border: 2px solid #efdb9f;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+
 }
 
 .page-footer {
+    width: 10%;
     min-width: 200px;
-    align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
     background-color: #f8cecd;
     border: 2px solid #e0a09d;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 @media screen and (max-width: 1024px) {
     .wrapper {
-        flex-direction: column;
-        justify-content: space-between;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;     
     }
 
-    main,
+    .main,
     .page-header,
-    .page-footer {
-        position: relative;
+    .page-footer,
+    .special {
+        position: static;
         width: 100%;
     }
 
     .page-header {
-        order: 1;
-    }
-
-    main {
-        order: 2;
-        margin: 0;
         margin-bottom: 10px;
     }
 
+    .main {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+    
+    .special {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+        align-items: normal;
+    -webkit-box-align: normal;
+        -ms-flex-align: normal;
+        align-items: normal;
+        
+    }
+
     .page-footer {
-        order: 3;
+        -ms-flex-item-align: end;
+            align-self: flex-end;
     }
 
 }
